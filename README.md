@@ -1,4 +1,8 @@
-# T-FLIPFLOP-POSEDGE
+Name: A Ahil Santo
+
+Register Number: 24900087
+
+# EXP9:T -FLIP-FLOP
 
 **AIM:**
 
@@ -28,15 +32,48 @@ From the above characteristic table, we can directly write the next state equati
 
 **Procedure**
 
-/* write all the steps invloved */
+1.	Type the program in Quartus software.
+
+2.	Compile and run the program.
+
+3.	Generate the RTL schematic and save the logic diagram.
+
+4.	Create nodes for inputs and outputs to generate the timing diagram.
+
+5.	For different input combinations generate the timing diagram.
 
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
 
+```
+module exp9 (t, clk, rst, q);
+  input t, clk, rst;
+  output reg q;
+
+  always @(posedge clk or posedge rst) 
+begin
+    if (rst)
+      q <= 0; // Reset the flip-flop
+    else if (t==0)
+      q <= q; 
+     else
+        q<=~q;
+  end
+endmodule
+
+```
+
 **RTL LOGIC FOR FLIPFLOPS**
+
+![exp9](https://github.com/user-attachments/assets/aa249fab-535f-4bb5-b969-8bcae228dba4)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![Screenshot (37)](https://github.com/user-attachments/assets/5a323612-0352-4311-ae8f-fbf3ffee9da8)
+
 **RESULTS**
+
+Thus to implement  T flipflop using verilog and validating their functionality using their functional tables done successfully.
+
